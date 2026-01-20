@@ -372,7 +372,9 @@ body{
 </section>
 
 <footer class="footer">
-© <span id="year"></span> Dra. M. Guadalupe Salva
+  <p>© <span id="current-year"></span> Dra. M. Guadalupe Salva - Centro de Servicios Legales</p>
+  <p>Todos los derechos reservados.</p>
+  <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 </footer>
 
 <script>
@@ -427,3 +429,4 @@ a.click();
 
 </body>
 </html>
+
