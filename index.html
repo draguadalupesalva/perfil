@@ -274,21 +274,23 @@ body{
 /* RESPONSIVE */
 @media (max-width:600px){
     .header-inner{
-        flex-direction:column;
-        text-align:center;
+        flex-direction:row; /* mantener fila */
+        text-align:left;
+        align-items:center;
     }
     .profile-img{
-        width:120px;   /* más pequeño en móvil */
-        height:auto;
-        margin-bottom:0.8rem;
+        width:90px;  /* un poquito más chico que en PC */
+        height:110px;
+        margin-bottom:0;
     }
     .header-text{
-        text-align:center;
+        text-align:left;
     }
     .contact-list{
-        justify-content:center;
+        justify-content:flex-start;
     }
 }
+
 
 </style>
 </head>
@@ -449,3 +451,4 @@ a.click();
 
 </body>
 </html>
+
