@@ -272,6 +272,30 @@ body{
     font-size:0.9rem;
     color:#777;
 }
+
+@media (max-width: 600px) {
+  .header-inner {
+    grid-template-columns: 1fr; /* una columna */
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .profile-img {
+    width: 120px;   /* más pequeña en móviles */
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .header-text {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .contact-list {
+    justify-content: center;
+  }
+}
+
 </style>
 </head>
 
@@ -431,6 +455,7 @@ a.click();
 
 </body>
 </html>
+
 
 
 
