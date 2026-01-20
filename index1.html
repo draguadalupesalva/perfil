@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. M. Guadalupe Salva</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+   
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    background:#f2f3f6;
+    font-family:'Inter',sans-serif;
+    color:#444;
+    line-height:1.7;
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+/* HEADER */
+.header{
+    background:#dde2f5;
+    padding:2rem;
+    border-radius:18px;
+    box-shadow:0 6px 24px rgba(0,0,0,.07);
+
+    display:flex;
+    justify-content: center;  /* centra .header-inner horizontalmente */
+}
+
+.header-inner{
+    display:flex;
+    align-items:center;
+    gap:2rem;
+    max-width:700px;
+
+    /* centra internamente el contenido, evita que la foto se salga */
+    margin: 0 auto;
+}
+
+
+
+.profile-img{
+    height:100%;
+    width:160px;
+    border-radius:14px; /* deja de ser circular, más profesional */
+    object-fit:cover;
+    box-shadow:0 6px 18px rgba(0,0,0,.15);
+}
+
+.header-text{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:left;
+}    
+
+.name{
+    font-family:'Playfair Display',serif;
+    font-size:2.05rem;
+    font-weight:700;
+    color:#1f1f1f;
+    letter-spacing:0.3px;
+    line-height:1.2;
+}
+
+
+.title{
+    margin:0.6rem 0 1.3rem;
+    color:#4b4b4b;
+}
+
+.title .role{
+    font-size:1rem;
+    font-weight:500;
+}
+
+.title .degree{
+    font-size:0.95rem;
+    font-weight:400;
+    color:#666;
+}
+
+
+/* SECTIONS */
+.section{
+    background:#f7f8fb;
+    margin-top:2rem;
+    padding:1rem;
+    border-radius:16px;
+    box-shadow:0 6px 22px rgba(0,0,0,.05);
+}
+.section h2{
+    font-family:'Playfair Display',serif;
+    margin: 1 auto 1.8rem;
+    font-size:1.5rem;
+    margin-bottom:1.2rem;
+    color:#2d2d2d;
+}
+    
+.section p{
+    margin: 0 auto 1.6rem;    
+    text-align:left;
+}
+
+.section p span{
+    font-weight:500;
+    color:#2f3b8f;
+}
+
+
+.contact-list{
+    font-size:0.88rem;
+    color:#6a6a6a;
+    gap:0.35rem;
+}
+
+.contact-item{
+    display:grid;
+    grid-template-columns:18px auto;
+    column-gap:12px;   /* ← separación real */
+    align-items:center;
+}
+
+
+.contact-item i{
+    font-size:0.85rem;
+    color:#5b6fd6;
+}
+
+    
+/* AREAS */
+.practice-areas{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center; 
+    gap:0.9rem;
+    margin-top:0.4rem;
+}
+.area{
+    background:#dde2f5;
+    padding:0.75rem 1.4rem;
+    border-radius:8px;
+    font-weight:500;
+    text-align:center;
+}
+
+/* ACTIONS */
+.actions{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1.5rem;
+    margin-top:1.2rem;
+}
+.action-card{
+    background:#dde2f5;
+    padding:1.6rem;
+    border-radius:14px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.06);    
+
+    display:grid;
+    grid-template-rows:
+        auto    /* título */
+        auto    /* texto */
+        1fr     /* espacio flexible */
+        auto    /* botón */
+        auto;   /* footer */
+}
+
+.action-footer{
+    min-height:80px; /* reserva espacio uniforme */
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
+
+.action-card h3{
+    font-family:'Playfair Display',serif;
+    margin-bottom:0.6rem;
+}
+.action-card p{
+    font-size:0.95rem;
+    color:#666;
+}
+.action-link{
+    display:inline-flex;
+    gap:0.5rem;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.95rem;
+
+    color:#3f5ed7;
+    padding:0.3rem 0;
+
+    transition:color .2s ease;
+}
+
+.action-link:hover{
+    color:#2f4fc0;
+    text-decoration:underline;
+}
+    
+.action-card a{
+    color:#4a63c7;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.action-card a:hover{
+    text-decoration:underline;
+}
+
+.action-card i{
+    margin-right:6px;
+    color:#5b6fd6;
+}
+
+.action-footer{
+    border-top:1px solid rgba(0,0,0,0.06);
+    margin-top:1rem;
+    padding-top:0.6rem;
+}
+    
+.location-info{
+    margin-top:0.8rem;
+    font-size:0.8rem;
+    color:#444;
+    min-height:48px; /* ← reserva espacio igual en todas */
+}
+
+.location-info div{
+    display:flex;
+    align-items:flex-start;
+    justify-content:flex-start;
+    gap:6px;
+    margin-top:4px;
+    text-align:left;
+}
+
+.location-info i{
+    color:#444;
+    font-size:0.8rem;
+}
+
+.location-info a{
+    color:#444;
+    text-decoration:none;
+}
+
+.location-info a:hover{
+    text-decoration:underline;
+}    
+    
+#schedule{
+    color:#000;
+    font-weight:400;
+}
+
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    margin-top:3rem;
+    padding:2rem;
+    font-size:0.9rem;
+    color:#777;
+}
+
+/* RESPONSIVE */
+@media (max-width:600px){
+    .header-inner{
+        flex-direction: row;   /* fila, no columna */
+        align-items: center;
+        gap: 1rem;
+        margin: 0 auto;        /* asegura centrado */
+    }
+
+    .profile-img{
+        width:80px;
+        height:100px;
+        object-fit: cover;
+        margin-bottom:0;
+    }
+
+    .header-text{
+        text-align: left;
+    }
+
+    .contact-list{
+        justify-content:flex-start;
+        margin-top:0.2rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <img src="profile.jpg" class="profile-img" alt="Dra. Guadalupe Salva">
+
+        <div class="header-text">
+            <h1 class="name">Dra. M. Guadalupe Salva</h1>
+            <p class="title">
+              <span class="role">Abogada · Especialista en Derecho Procesal</span><br>
+              <span class="degree">Magíster en Argumentación Jurídica</span>
+            </p>
+
+
+            <div class="contact-list">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i><span id="phone"></span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a id="addressShort" target="_blank"></a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i><span id="email"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<section class="section">
+  <h2>Sobre la profesional</h2>
+
+  <p>
+  <span>Abogada y Titular</span> del Centro de Servicios Legales, ofrece <span>atención jurídica personalizada</span> con un enfoque 
+  <span>claro, humano y responsable</span>, acompañando a cada persona en la <span>comprensión y defensa de sus derechos.</span>
+</p>
+
+  <div class="practice-areas">
+    <div class="area">Derecho Laboral</div>
+    <div class="area">Derecho de Familia</div>
+    <div class="area">Asuntos Civiles</div>
+    <div class="area">Derecho Procesal</div>
+  </div>
+</section>
+
+
+<section class="section">
+<h2>Agendar contacto y cita</h2>
+
+<div class="actions">
+    <div class="action-card">
+        <h3>Guardar contacto</h3>
+        <p>Se descargará un archivo para guardar el contacto en su agenda.</p>
+        <a href="#" onclick="downloadVCF()" class="action-link">
+            <i class="fas fa-address-card"></i> Descargar contacto
+        </a>
+        
+        <div class="action-footer"></div>
+    </div>
+
+    <div class="action-card">
+        <h3>Solicitar cita previa</h3>
+        <p>Agende su consulta online de forma simple.</p>
+
+        <div class="action-spacer"></div>
+
+        <a id="calendarLink" target="_blank" class="action-link">
+            <i class="fas fa-calendar-check"></i> Reservar turno
+        </a>
+
+        <div class="action-footer">
+          <div class="location-info">
+            <div>
+                <i class="fas fa-clock"></i>
+                <span id="schedule"></span>
+            </div>  
+            <div>
+                <i class="fas fa-map-marker-alt"></i>
+                <a id="addressFull" target="_blank"></a>
+            </div>            
+          </div>      
+        </div>
+    </div>
+
+    <div class="action-card">
+        <h3>Contacto por WhatsApp</h3>
+        <p>Opción alternativa de contacto directo.</p>
+        <a id="whatsapp" target="_blank" class="action-link">
+            <i class="fab fa-whatsapp"></i> Enviar mensaje
+        </a>
+        
+        <div class="action-footer"></div>
+    </div>
+</div>
+</section>
+
+<footer class="footer">
+  <p>© <span id="current-year"></span> Dra. M. Guadalupe Salva - Centro de Servicios Legales</p>
+  <p>Todos los derechos reservados.</p>
+  <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+</footer>
+
+<script>
+const config={
+    telefono:'+54 9 351 7079452',
+    whatsapp:'5493517079452',
+    ciudad:'Pilar, Córdoba',
+    direccion:'Pilar MiniMall Local 8, Pilar - Córdoba',
+    maps:'https://maps.app.goo.gl/9WTB8GeuAsaMsxL78',
+    email:'oficinalegal.salva@gmail.com',
+    calendar:'https://calendar.google.com',
+    horario:'Martes de 10 am a 17 pm'
+};
+
+// HEADER
+phone.textContent = config.telefono;
+email.textContent = config.email;
+
+addressShort.textContent = config.ciudad;
+addressShort.href = config.maps;
+
+// CARD CITA PREVIA
+addressFull.textContent = config.direccion;
+addressFull.href = config.maps;
+schedule.textContent = config.horario;
+
+whatsapp.href = `https://wa.me/${config.whatsapp}?text=Hola,%20quisiera%20realizar%20una%20consulta.`;
+calendarLink.href = config.calendar;
+
+year.textContent = new Date().getFullYear();
+
+function downloadVCF(){
+const v=`BEGIN:VCARD
+VERSION:3.0
+N:Salva;Guadalupe;;Dra.;
+FN:Dra. M. Guadalupe Salva
+ORG:Centro de Servicios Legales
+TITLE:Abogada · Especialista en Derecho Procesal
+TEL;TYPE=CELL:${config.telefono}
+EMAIL;TYPE=INTERNET:${config.email}
+ADR;TYPE=WORK:;;Ruta 9 esq. Gildo Giotto - Pilar Mini Mall Local 8;Pilar;Córdoba;;Argentina
+URL:${config.maps}
+END:VCARD`;
+
+const b=new Blob([v],{type:'text/vcard;charset=utf-8'});
+const a=document.createElement('a');
+a.href=URL.createObjectURL(b);
+a.download='Dra_Guadalupe_Salva.vcf';
+a.click();
+}
+</script>
+
+</body>
+</html>
