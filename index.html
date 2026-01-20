@@ -274,41 +274,39 @@ body{
 /* RESPONSIVE */
 @media (max-width:600px){
     .header-inner{
-        flex-direction: row; /* mantener la fila */
-        text-align: left;
-        align-items: center;
-        gap: 1rem;
-        padding: 0.5rem;
+        flex-direction: column;
+        text-align: center;
     }
 
-   .practice-areas{
+    .profile-img{
+        width:150px;      /* más grande que antes */
+        height:190px;     /* mantiene proporción */
+        margin-bottom:1rem;
+    }
+
+    .header-text{
+        text-align: center;
+    }
+
+    .contact-list{
+        justify-content: center;
+    }
+
+    /* Áreas de práctica móviles */
+    .practice-areas{
         flex-direction: column;
         gap:0.5rem;
         align-items: center;
     }
+
     .area{
         width:100%;          /* todo el ancho disponible */
-        max-width:300px;     /* opcional, para que no quede gigante */
+        max-width:300px;     /* opcional para que no quede gigante */
         text-align:center;
-        padding:0.75rem 1rem; /* opcional: ajustar padding */
-    }
-   
-    .profile-img{
-        width:80px;      /* un poquito más pequeño que en PC */
-        height:100px;    /* mantener proporción */
-        object-fit: cover;
-        margin-bottom:0;
-    }
-
-    .header-text{
-        text-align: left;
-    }
-
-    .contact-list{
-        justify-content: flex-start;
-        margin-top: 0.2rem;
+        padding:0.75rem 1rem;
     }
 }
+
 
 </style>
 </head>
@@ -469,6 +467,7 @@ a.click();
 
 </body>
 </html>
+
 
 
 
