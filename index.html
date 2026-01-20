@@ -33,11 +33,11 @@ body{
 }
 
 .header-inner{
-    display:grid;
-    grid-template-columns: auto 1fr;
+    display:flex;
+    align-items:center;
     gap:2rem;
-    align-items:stretch; /* ← clave */
     max-width:700px;
+    padding:0.5rem;
 }
 
 
@@ -50,13 +50,11 @@ body{
 }
 
 .header-text{
-    text-align:left;
     display:flex;
     flex-direction:column;
     justify-content:center;
-}
-
-    
+    text-align:left;
+}    
 
 .name{
     font-family:'Playfair Display',serif;
@@ -273,27 +271,23 @@ body{
     color:#777;
 }
 
-@media (max-width: 600px) {
-  .header-inner {
-    grid-template-columns: 1fr; /* una columna */
-    gap: 1rem;
-    text-align: center;
-  }
-
-  .profile-img {
-    width: 120px;   /* más pequeña en móviles */
-    height: auto;
-    margin: 0 auto;
-  }
-
-  .header-text {
-    text-align: center;
-    justify-content: center;
-  }
-
-  .contact-list {
-    justify-content: center;
-  }
+/* RESPONSIVE */
+@media (max-width:600px){
+    .header-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+    .profile-img{
+        width:120px;   /* más pequeño en móvil */
+        height:auto;
+        margin-bottom:0.8rem;
+    }
+    .header-text{
+        text-align:center;
+    }
+    .contact-list{
+        justify-content:center;
+    }
 }
 
 </style>
@@ -455,7 +449,3 @@ a.click();
 
 </body>
 </html>
-
-
-
-
