@@ -292,18 +292,18 @@ body{
         justify-content: center;
     }
 
-    /* Áreas de práctica móviles */
     .practice-areas{
-        flex-direction: column;
-        gap:0.5rem;
-        align-items: center;
+        display: flex;
+        flex-direction: column;  /* apilar verticalmente */
+        gap: 0.5rem;
+        align-items: center;     /* centrado horizontal */
     }
 
-    .area{
-        width:100%;          /* todo el ancho disponible */
-        max-width:300px;     /* opcional para que no quede gigante */
-        text-align:center;
-        padding:0.75rem 1rem;
+    .practice-areas .area{
+        width: 100%;            /* ocupan todo el ancho del contenedor */
+        max-width: 300px;       /* opcional, evita que queden gigantes */
+        text-align: center;
+        padding: 0.75rem 1rem;  /* suficiente padding para que quede bonito */
     }
 }
 
@@ -467,6 +467,7 @@ a.click();
 
 </body>
 </html>
+
 
 
 
