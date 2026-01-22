@@ -66,9 +66,23 @@ body{
 }
 
 .profile-text p{
-    font-size:0.85rem;
-    color:#555;
-    margin-top:4px;
+    margin:0;               /* evita espacios desprolijos */
+}
+
+.especialidad{
+    color:#3f4f8f;
+    font-size:0.9rem;
+    font-weight:500;
+    line-height:1.3;
+    margin-top:0.4rem;
+}
+
+.institucion{
+    color:#666;
+    font-size:0.8rem;
+    font-weight:400;
+    margin-top:0.2rem;
+    line-height:1.3;
 }
 
 .separator{
@@ -79,13 +93,6 @@ body{
 
 .qr{
     margin:1.2rem 0;
-}
-
-.especialidad{
-    color:#3f4f8f;
-    font-size:0.9rem;     /* más chico */
-    font-weight:400;      /* liviano */
-    line-height:1.3;
 }
 
 .qr img{
@@ -121,6 +128,11 @@ body{
     color:#666;
     margin-top:1rem;
 }
+
+@media (max-width:600px){
+    .especialidad{ font-size:0.85rem; }
+    .institucion{ font-size:0.75rem; }
+}
 </style>
 </head>
 
@@ -134,9 +146,12 @@ body{
 
             <div class="profile-text">
                 <h1>M. Guadalupe Salva</h1>
+            
                 <p class="especialidad">
                     Abogada · Asesoramiento · Litigios
-                </p>   
+                </p>
+            
+                <p class="institucion">
                     Universidad Católica de Córdoba · Argentina
                 </p>
             </div>
@@ -166,6 +181,7 @@ body{
 
 </body>
 </html>
+
 
 
 
