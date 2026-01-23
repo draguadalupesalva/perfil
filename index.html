@@ -24,14 +24,25 @@ body{
 
 /* HEADER */
 .header{
-    background:#dde2f5;
-    padding:2rem;
-    border-radius:18px;
-    box-shadow:0 6px 24px rgba(0,0,0,.07);
+    background:linear-gradient(135deg, #e3e7f8 0%, #d6dcf2 100%);
+    padding:2.4rem 2rem;
+    border-radius:20px;
+    box-shadow:
+        0 12px 28px rgba(0,0,0,.08),
+        inset 0 1px 0 rgba(255,255,255,.6);
     display:flex;
     justify-content:center;
+
+    animation:fadeUp .8s ease-out both;
 }
 
+.header-text p:not(.title){
+    font-size:0.95rem;
+    color:#555;
+    max-width:520px;
+}
+
+    
 .header-inner{
     display:flex;
     align-items:center;
@@ -58,30 +69,63 @@ body{
 
 .name{
     font-family:'Playfair Display',serif;
-    font-size:2.05rem;
+    font-size:2.15rem;
     font-weight:700;
     color:#1f1f1f;
-    letter-spacing:0.3px;
-    line-height:1.2;
+    letter-spacing:0.4px;
+    line-height:1.15;
+}
+
+
+<div class="legal-icon">
+    <i class="fas fa-scale-balanced"></i>
+</div>
+    
+.intro-text{
+    margin-top:0.6rem;
+    font-size:0.95rem;
+    color:#4b4b4b;
+    line-height:1.6;
+}
+
+.intro-text span{
+    font-weight:500;
+    color:#3f4f8f;
 }
 
 
 .title{
-    margin:0.6rem 0 1.3rem;
-    color:#4b4b4b;
+    margin:0.7rem 0 1.1rem;
 }
 
 .title .role{
     font-size:1rem;
     font-weight:500;
+    color:#2d2d2d;
 }
 
 .title .degree{
-    color:#3f4f8f;
     font-size:0.95rem;
-    font-weight:400;    
+    font-weight:400;
+    color:#3f5ed7;
 }
 
+.role{
+    display:inline-flex;
+    align-items:center;
+    gap:0.45rem;
+}
+
+.role-icon{
+    font-size:0.85rem;
+    margin-right:6px;
+    color:#3f4f8f;
+    opacity:0.75;
+}
+
+.role:hover .role-icon{
+    transform:translateY(-1px);
+}
 
 /* SECTIONS */
 .section{
@@ -281,6 +325,18 @@ body{
     color:#777;
 }
 
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(12px);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+    
 /* RESPONSIVE */
 @media (max-width:600px){
     .header-inner{
@@ -310,6 +366,17 @@ body{
         font-size:0.95rem;
         padding:0.9rem 1rem;
     }
+    .legal-icon{
+        font-size:1rem;
+    }
+
+    .name{
+        font-size:1.9rem;
+    }
+
+    .header-text p:not(.title){
+        font-size:0.92rem;
+    }
 
 }
 
@@ -320,19 +387,27 @@ body{
 <body>
 
 <header class="header">
-    <div class="header-inner">
-        <img src="profile.jpg" class="profile-img" alt="Dra. Guadalupe Salva">
+    <div class="header-inner">        
 
+        <img src="profile.jpg" class="profile-img" alt="Dra. Guadalupe Salva">
+        
         <div class="header-text">
             <h1 class="name">M. Guadalupe Salva</h1>
             <p class="title">
-              <span class="role">Abogada · Asesoramiento · Litigios</span><br>
-              <span class="degree">Especialización en Derecho Procesal / Maestría en Argumentación Jurídica</span>
+              <span class="role">
+                <i class="fas fa-scale-balanced role-icon"></i>
+                 Abogada · Asesoramiento · Litigios
+                </span>
+                <br>
+                <span class="degree">Especialización en Derecho Procesal / Maestría en Argumentación Jurídica</span>
             </p>
-            <p>
-              <span>Abogada y Titular</span> del Centro de Servicios Legales, ofrece <span>atención jurídica personalizada</span> con un enfoque 
-              <span>claro, humano y responsable</span>, acompañando a cada persona en la <span>comprensión y defensa de sus derechos.</span>
+            <p class="intro-text">
+              <span>Abogada y Titular</span> del Centro de Servicios Legales, ofrece 
+              <span>atención jurídica personalizada</span> con un enfoque 
+              <span>claro, humano y responsable</span>, acompañando a cada persona en la 
+              <span>comprensión y defensa de sus derechos.</span>
             </p>
+
 
             <!--<div class="contact-list">
                 <div class="contact-item">
@@ -415,7 +490,7 @@ body{
 </section>
 
 <footer class="footer">
-  <p>© <span id="current-year"></span> Dra. M. Guadalupe Salva - Centro de Servicios Legales</p>
+  <p>© <span id="current-year"></span> M. Guadalupe Salva - Centro de Servicios Legales</p>
   <p>Todos los derechos reservados.</p>
   <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 </footer>
@@ -429,7 +504,8 @@ const config={
     maps:'https://maps.app.goo.gl/9WTB8GeuAsaMsxL78',
     email:'oficinalegal.salva@gmail.com',
     calendar:'https://calendar.google.com',
-    horario:'Martes de 10 am a 17 pm'
+    horario:'Martes de 10 am a 17 pm',
+    web:'https://draguadalupesalva.github.io/perfil/'
 };
 
 // HEADER
@@ -452,34 +528,22 @@ year.textContent = new Date().getFullYear();
 function downloadVCF(){
 const v=`BEGIN:VCARD
 VERSION:3.0
-N:Salva;Guadalupe;;Dra.;
-FN:Dra. M. Guadalupe Salva
+N:Salva;Guadalupe;;M;
+FN:M. Guadalupe Salva
 ORG:Centro de Servicios Legales
-TITLE:Abogada · Especialista en Derecho Procesal
+TITLE:Abogada · Asesoramiento · Litigios
 TEL;TYPE=CELL:${config.telefono}
 EMAIL;TYPE=INTERNET:${config.email}
-ADR;TYPE=WORK:;;Pilar Mini Mall Local 8;Pilar;Córdoba;;Argentina
-URL:${config.maps}
+URL:${config.web}
 END:VCARD`;
 
 const b=new Blob([v],{type:'text/vcard;charset=utf-8'});
 const a=document.createElement('a');
 a.href=URL.createObjectURL(b);
-a.download='Dra_Guadalupe_Salva.vcf';
+a.download='M_Guadalupe_Salva.vcf';
 a.click();
 }
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
