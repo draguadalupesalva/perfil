@@ -24,15 +24,22 @@ body{
 
 /* HEADER */
 .header{
-    background:linear-gradient(135deg, #e3e7f8 0%, #d6dcf2 100%);
+    background:linear-gradient(135deg,
+        #f5f6fa 0%,
+        #e6e9f1 100%
+    );
     padding:2.4rem 2rem;
     border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.24);
-    display:flex;
+
+    box-shadow:
+        0 14px 34px rgba(0,0,0,.20),
+        inset 0 1px 0 rgba(255,255,255,.75);
+        display:flex;
     justify-content:center;
 
     animation:fadeUp .8s ease-out both;
 }
+
 
 .header-text p:not(.title){
     font-size:0.95rem;
@@ -185,7 +192,7 @@ body{
 
 
 .area{
-    background:#dde2f5;
+    background:#e3e6f3;
     padding:0.65rem 1rem;
     font-size:0.9rem;
     border-radius:9px;
