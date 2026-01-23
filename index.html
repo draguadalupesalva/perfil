@@ -158,7 +158,64 @@ body{
     color:#2f3b8f;
 }
 
+.contact-grid{
+  display:grid;
+  gap:1.4rem;
+  margin-top:1.2rem;
+}
+    
+.contact-card{
+  border-radius:14px;
+  padding:1.2rem;
+  background:#e6e8ed;
+  border:1px solid #d5d8e0;
+  text-align:center;
+  transition:.25s ease;
+}
 
+.contact-card.primary{
+  background:#f2f3f6;
+}    
+    
+.contact-card:hover{
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  transform:translateY(-2px);
+}
+
+.contact-card i{
+  font-size:1.5rem;
+  color:#5a5f73;
+  margin-bottom:.6rem;
+}
+    
+.contact-card h3{
+  font-size:.95rem;
+  font-weight:500;
+  color:#2b2b2b;
+}
+    
+.contact-card p{
+  font-size:0.9rem;
+  color:#666;
+  text-align: center;
+  margin-bottom:0.9rem;
+}
+
+.contact-card button,
+.contact-card .btn-link{
+  background:none;
+  border:none;
+  color:#3f5ed7;
+  font-weight:600;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+.contact-card button:hover,
+.contact-card .btn-link:hover{
+  text-decoration:underline;
+}
+    
 .contact-list{
     font-size:0.88rem;
     color:#6a6a6a;
@@ -346,6 +403,20 @@ body{
 }
 
     
+/* Desktop */
+@media (min-width: 900px){
+  .contact-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+    
+/* Mobile */
+@media (max-width: 899px){
+  .contact-grid{
+    grid-template-columns: 1fr;
+  }
+}    
+    
 /* RESPONSIVE */
 @media (max-width:600px){
     .header-inner{
@@ -449,53 +520,47 @@ body{
 
 
 <section class="section">
-<h2>Agendar contacto y cita</h2>
+  <h2>Contacto y citas</h2>
 
-<div class="actions">
-    <div class="action-card">
-        <h3>Guardar contacto</h3>
-        <p>Se descargará un archivo para guardar el contacto en su agenda.</p>
-        <a href="#" onclick="downloadVCF()" class="action-link">
-            <i class="fas fa-address-card"></i> Descargar contacto
-        </a>
-        
-        <div class="action-footer"></div>
+  <div class="contact-grid">
+
+    <!-- vCard -->
+    <div class="contact-card primary">
+      <i class="fas fa-address-card"></i>
+      <h3>Guardar contacto</h3>
+      <p>Agregue el contacto profesional a su agenda.</p>
+      <button onclick="downloadVCF()">Descargar vCard</button>
     </div>
 
-    <div class="action-card">
-        <h3>Solicitar cita previa</h3>
-        <p>Agende su consulta online de forma simple.</p>
-
-        <div class="action-spacer"></div>
-
-        <a id="calendarLink" target="_blank" class="action-link">
-            <i class="fas fa-calendar-check"></i> Reservar turno
-        </a>
-
-        <div class="action-footer">
-          <div class="location-info">
-            <div>
-                <i class="fas fa-clock"></i>
-                <span id="schedule"></span>
-            </div>  
-            <div>
-                <i class="fas fa-map-marker-alt"></i>
-                <a id="addressFull" target="_blank"></a>
-            </div>            
-          </div>      
-        </div>
+    <!-- Formulario -->
+    <div class="contact-card primary">
+      <i class="fas fa-envelope-open-text"></i>
+      <h3>Formulario de contacto</h3>
+      <p>Realice una consulta o deje su mensaje.</p>
+      <a href="#formulario" class="btn-link">Ir al formulario</a>
     </div>
 
-    <div class="action-card">
-        <h3>Contacto por WhatsApp</h3>
-        <p>Opción alternativa de contacto directo.</p>
-        <a id="whatsapp" target="_blank" class="action-link">
-            <i class="fab fa-whatsapp"></i> Enviar mensaje
-        </a>
-        
-        <div class="action-footer"></div>
+    <!-- Cita presencial -->
+    <div class="contact-card">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3>Cita presencial</h3>
+      <p>Atención en estudio jurídico.</p>
+      <a target="_blank" href="https://calendar.google.com" class="btn-link">
+        Reservar turno presencial
+      </a>
     </div>
-</div>
+
+    <!-- Cita online -->
+    <div class="contact-card">
+      <i class="fas fa-video"></i>
+      <h3>Cita online</h3>
+      <p>Consulta virtual por videollamada.</p>
+      <a target="_blank" href="https://calendar.google.com" class="btn-link">
+        Reservar turno virtual
+      </a>
+    </div>
+
+  </div>
 </section>
 
 <footer class="footer">
