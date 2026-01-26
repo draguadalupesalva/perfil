@@ -421,17 +421,19 @@ body{
 @media (max-width:600px){
     .header-inner{
         flex-direction: column;
-        text-align: center;
+        align-items: center;
     }
 
     .profile-img{
-        width:150px;      /* más grande que antes */
-        height:190px;     /* mantiene proporción */
+        width:150px;
+        height:190px;
         margin-bottom:1rem;
     }
 
     .header-text{
-        text-align: center;
+        text-align: left;              /* ← CLAVE */
+        max-width: 420px;              /* ← controla lectura */
+        width: 100%;
     }
 
     .contact-list{
@@ -442,20 +444,39 @@ body{
         grid-template-columns:1fr;
     }
 
-    .area{
+    area{
         font-size:0.95rem;
         padding:0.9rem 1rem;
     }
+    
     .legal-icon{
         font-size:1rem;
     }
 
     .name{
-        font-size:1.9rem;
+        text-align: center;            /* nombre sí centrado */
+        font-size:1.85rem;
+        margin-bottom:0.4rem;
+    }
+    
+    .title{
+        margin:0.6rem 0 0.9rem;
     }
 
+    .title .role,
+    .title .degree{
+        display:block;
+        text-align:left;               /* ← mejora muchísimo */
+    }
+    
     .header-text p:not(.title){
         font-size:0.92rem;
+    }
+    
+    .intro-text{
+        text-align:left;
+        font-size:0.93rem;
+        line-height:1.65;
     }
 
 }
