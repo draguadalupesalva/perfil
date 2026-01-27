@@ -174,8 +174,9 @@ body{
 }
 
 .contact-card.primary{
-  background:#f2f3f6;
-}    
+  background:#eceef3;
+  opacity:0.95;
+}
     
 .contact-card:hover{
   box-shadow:0 8px 20px rgba(0,0,0,.08);
@@ -346,6 +347,34 @@ body{
     padding-top:0.6rem;
 }
     
+.contact-card.highlight{
+  background:#f7f8fb;
+  border:1px solid #cfd4e6;
+}
+
+.contact-card.highlight i{
+  color:#3f4f8f;
+}
+
+.contact-card.highlight h3{
+  font-size:1.05rem;
+}
+ 
+.btn-primary{
+  display:inline-block;
+  background:#3f4f8f;
+  color:#fff;
+  padding:0.45rem 0.9rem;
+  border-radius:6px;
+  font-weight:400;
+  font-size:0.9rem;
+  text-decoration:none;
+}
+
+.btn-primary:hover{
+  background:#2f3f75;
+}
+    
 .location-info{
     margin-top:0.8rem;
     font-size:0.8rem;
@@ -375,6 +404,10 @@ body{
 .location-info a:hover{
     text-decoration:underline;
 }    
+    
+.section.soft{
+  background:#f3f4f8;
+}
     
 #schedule{
     color:#000;
@@ -436,6 +469,14 @@ body{
         width: 100%;
     }
 
+    .contact-card.highlight{
+        padding:1.4rem;
+    }
+
+    .contact-card.highlight a{
+        display:inline-block;
+        margin-top:0.4rem;
+    }
     .contact-list{
         justify-content: center;
     }
@@ -546,47 +587,53 @@ body{
 
 
 <section class="section">
-  <h2>Contacto y citas</h2>
+  <h2>Reserva de citas</h2>
+    <p style="font-size:.9rem;color:#666;margin-top:-0.6rem">
+    Turnos presenciales y online con reserva previa
+    </p>
 
   <div class="contact-grid">
 
-    <!-- vCard -->
-    <div class="contact-card primary">
-      <i class="fas fa-address-card"></i>
-      <h3>Guardar contacto</h3>
-      <p>Agregue el contacto profesional a su agenda.</p>
-      <button onclick="downloadVCF()">Descargar vCard</button>
+    <!-- Cita presencial -->
+    <div class="contact-card highlight">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3>Cita presencial</h3>
+      <p>Atención en Pilar, Córdoba.</p>
+      <a target="_blank" href="https://calendar.google.com" class="btn-primary">
+          Reservar turno presencial</a>    
     </div>
 
+    <!-- Cita online -->
+    <div class="contact-card highlight">
+      <i class="fas fa-video"></i>
+      <h3>Cita online</h3>
+      <p>Consulta virtual por videollamada.</p>
+      <a target="_blank" href="https://calendar.google.com" class="btn-primary">
+          Reservar turno online</a>
+    </div>
+  </div>  
+
+ </section>      
+ 
+ <section class="section soft">
+  <h2>Contacto</h2> 
     <!-- Formulario -->
-    <div class="contact-card primary">
+    <div class="contact-grid">
+     <div class="contact-card primary">
       <i class="fas fa-envelope-open-text"></i>
       <h3>Formulario de contacto</h3>
       <p>Realice una consulta o deje su mensaje.</p>
       <a href="#formulario" class="btn-link">Ir al formulario</a>
     </div>
 
-    <!-- Cita presencial -->
-    <div class="contact-card">
-      <i class="fas fa-map-marker-alt"></i>
-      <h3>Cita presencial</h3>
-      <p>Atención en estudio jurídico.</p>
-      <a target="_blank" href="https://calendar.google.com" class="btn-link">
-        Reservar turno presencial
-      </a>
-    </div>
-
-    <!-- Cita online -->
-    <div class="contact-card">
-      <i class="fas fa-video"></i>
-      <h3>Cita online</h3>
-      <p>Consulta virtual por videollamada.</p>
-      <a target="_blank" href="https://calendar.google.com" class="btn-link">
-        Reservar turno virtual
-      </a>
-    </div>
-
-  </div>
+    <!-- vCard -->
+    <div class="contact-card primary">
+      <i class="fas fa-address-card"></i>
+      <h3>Guardar contacto</h3>
+      <p>Agregue el contacto profesional a su agenda.</p>
+      <a href="#" onclick="downloadVCF()" class="btn-link">Descargar vCard</a>
+    </div>    
+   </div>        
 </section>
 
 <footer class="footer">
@@ -647,4 +694,3 @@ a.click();
 
 </body>
 </html>
-
